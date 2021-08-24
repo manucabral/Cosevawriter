@@ -1,2 +1,2 @@
 # Cosevawriter
-Programa para sobrescribir y leer archivos .csv
+Program to overwrite and read .csv files
