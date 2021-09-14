@@ -1,17 +1,56 @@
 #include "coseva.hpp"
 
-bool existFile(std::string fileName)
+bool file_exists(char const *filename)
 {
-    return static_cast<bool>(std::ifstream(fileName));
+    FILE *file = fopen(filename, "r");
+    return !(file == NULL);
 }
 
-template <typename A, typename B>
-void  writeData(std::string fileName, A column, B *arr, int arrsize)
+int strcmp(char const *s1, char const *s2)
 {
-    std::ofstream file(fileName);
-    file << column << '\n';
-    f(i, arrsize)
-            file
-        << arr[i] << '\n';
-    file.close();
+    if (!s1 && !s2)
+        return 0;
+    if (s1 && !s2)
+        return 1;
+    if (!s1 && s2)
+        return -1;
+
+    while (*s1 && *s2 && *s1 == *s2)
+        s1++, s2++;
+
+    if (!*s1 && !*s2)
+        return 0;
+    else if (*s1 > *s2)
+        return 1;
+    else
+        return -1;
+}
+
+int strlen(char *str)
+{
+    int length = 0;
+    while (str[++length] != '\0')
+    {
+    }
+
+    return length;
+}
+
+void file_write(char const *filename, int columns, int rows)
+{
+    FILE *file;
+    char data[10] = "";
+    const char *truncate;
+    if (file = fopen(filename, "wb+"))
+    {
+        f(i, rows)
+            f(i, columns)
+        {
+            std::cin >> data;
+            fwrite(data, sizeof(char), strlen(data), file);
+            truncate = (i == columns - 1 ? "\n" : ",");
+            fwrite(truncate, sizeof(char), 1, file);
+        }
+        fclose(file);
+    }
 }
