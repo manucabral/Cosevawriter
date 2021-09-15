@@ -30,6 +30,12 @@ int main(int argc, char const *argv[])
         file_write(argv[1], columns, rows);
     }
 
+    if(strcmp(argv[2], "read") == 0){
+        success = true;
+        std::cout << "> Executing reading mode.." << std::endl;
+        file_read(argv[1], false);
+    }
+
     if (!success)
     {
         std::cout << "Missing file mode :(" << std::endl;

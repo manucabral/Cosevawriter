@@ -1,5 +1,6 @@
 #ifndef _coseva_h_included_
 #define _coseva_h_included_
+#define MAX_STR_LEN 24
 
 #include <iostream>
 
@@ -41,7 +42,17 @@ int strcmp(char const *s1, char const *s2);
  * @param filename target filename with his extension: "example.csv"
  * @param columns max columns to write
  * @param rows max rows to write
+ * @return int 0 success, 1 error
  */
-void file_write(char const *filename, int columns, int rows);
+int file_write(char const *filename, int columns, int rows);
+
+/**
+ * @brief read a file
+ * 
+ * @param filename target filename with his extension: "example.csv"
+ * @param export_txt exports to txt, default false
+ * @return int 0 sucess, 1 error
+ */
+int file_read(char const *filename, bool export_txt);
 
 #endif
