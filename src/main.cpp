@@ -1,4 +1,4 @@
-#include "libs/coseva.cpp"
+#include "libs/coseva.hpp"
 
 // for execute: g++ main.cpp -o coseva -> coseva <param1> <param2>
 
