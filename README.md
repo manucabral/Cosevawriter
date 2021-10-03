@@ -13,4 +13,4 @@ cd Cosevawriter
 g++ src/main.cpp -o coseva
 coseva [filename] [write/read]
 ```
-> Or you can also start the **run** file
+> Or you can also start the **Makefile**
